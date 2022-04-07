@@ -68,11 +68,7 @@ const LoginScreen = ({ navigation, route }) => {
 
 
   return (
-
-    <KeyboardAvoidingView
-      style={styles.container}
-      behavior="padding"
-    >
+    <View style={{ flex: 1, backgroundColor: "white", alignItems: "center" }}>
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Email"
@@ -105,7 +101,7 @@ const LoginScreen = ({ navigation, route }) => {
           <Text style={styles.buttonOutlineText}>Register</Text>
         </TouchableOpacity>
       </View>
-    </KeyboardAvoidingView>
+    </View>
   );
 
 }

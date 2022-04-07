@@ -31,6 +31,7 @@ const TabNavigator = () => {
         name="CartScreen"
         component={CartScreen}
         options={{
+          headerTitle:"Cart",
           tabBarLabel: 'Cart',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="bell" color={color} size={26} />

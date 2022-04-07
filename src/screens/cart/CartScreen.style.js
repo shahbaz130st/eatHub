@@ -4,8 +4,8 @@ export const styles = StyleSheet.create({
     mainViewStyle: {
         flex: 1,
         alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "white"
+        // justifyContent: "center",
+        // backgroundColor: "white"
     },
     buttonStyle: {
         borderColor: "#FF4500",

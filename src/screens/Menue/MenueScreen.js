@@ -7,55 +7,51 @@ import React from "react";
 
 const MenueScreen = ({ navigation, route }) => {
 
-const [menuData, setMenuData] = useState([]);
-const [isLoading, setLoading] = useState(true);
+  const [menuData, setMenuData] = useState([]);
+  const [isLoading, setLoading] = useState(true);
 
-const getMenuFromAPI = () => {
+  const getMenuFromAPI = () => {
 
-  const apiURL= `https://gist.githubusercontent.com/skd09/8d8a685ffbdae387ebe041f28384c13c/raw/26e97cec1e18243e3d88c90d78d2886535a4b3a6/menu.json`;
-  console.log(apiURL);
-  
-  fetch(apiURL)
-  .then( (response) => response.json()
-	.then( (json) => { setMenuData(json)})
-  .catch( (error) => {console.error(error); })
-  .finally( () => setLoading(false) )
-  );
-}
+    const apiURL = `https://gist.githubusercontent.com/skd09/8d8a685ffbdae387ebe041f28384c13c/raw/26e97cec1e18243e3d88c90d78d2886535a4b3a6/menu.json`;
+    console.log(apiURL);
 
-useEffect( () => {getMenuFromAPI()}, []);
+    fetch(apiURL)
+      .then((response) => response.json()
+        .then((json) => { setMenuData(json) })
+        .catch((error) => { console.error(error); })
+        .finally(() => setLoading(false))
+      );
+  }
+
+  useEffect(() => { getMenuFromAPI() }, []);
 
 
-const renderItem = ( {item} ) => (
+  const renderItem = ({ item }) => (
 
-  
-  <Pressable style={styles.card} onPress={ () => {console.log(item) /* navigation.navigate("ProductDetailScreen",  {productId: item.Id}); */} } >
- 
+
+    <Pressable style={styles.card} onPress={() => { navigation.navigate("ProductDetailScreen", { item: item }); }} >
+
 
       <Image
         style={styles.thumb}
-      //  source={{
-      //   uri: 'https://images.media-allrecipes.com/userphotos/7115897.jpg',
-      // }}
-       source={ {uri: (item.Image)}}
+        source={{ uri: (item.Image) }}
       />
       <View style={styles.infoContainer}>
         <Text style={styles.name}>{item.Title}</Text>
         <Text style={styles.price}>$ {item.Price}</Text>
       </View>
-      
-  </Pressable>
-);
 
-//console.log(menuData);
-  
+    </Pressable>
+  );
+
+
   return (
 
-   
+
     <ScrollView>
-    
-    <View style={styles.mainViewStyle}>
-      {/* <Text style={{marginBottom:20}}>{"You are at Home Page"}</Text>
+
+      <View style={styles.mainViewStyle}>
+        {/* <Text style={{marginBottom:20}}>{"You are at Home Page"}</Text>
       <TouchableOpacity style={styles.buttonStyle} onPress={() => {
         navigation.navigate("ProductDetailScreen")
       }}>
@@ -63,18 +59,18 @@ const renderItem = ( {item} ) => (
       </TouchableOpacity> */}
 
         {isLoading ? (
-                <ActivityIndicator animating={true} size="large"/>
-            ) : (
-                <FlatList 
-                data = {menuData}
-                keyExtractor = { (item) => {return item.Id}}
-                renderItem = { renderItem }
-                />
-            ) }
+          <ActivityIndicator animating={true} size="large" />
+        ) : (
+          <FlatList
+            data={menuData}
+            keyExtractor={(item) => { return item.Id }}
+            renderItem={renderItem}
+          />
+        )}
 
-    </View>
+      </View>
     </ScrollView>
- 
+
   )
 }
 export default MenueScreen;
