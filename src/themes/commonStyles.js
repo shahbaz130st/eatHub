@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 export const styles = StyleSheet.create({
     container: {
@@ -138,6 +139,14 @@ export const styles = StyleSheet.create({
     borderRadius: 15,
     alignItems: "center",
     justifyContent: "center"
+  },
+
+  orderCard:{
+    width: '90%',
+    backgroundColor: "#f2f0f0",
+    marginTop: 16,
+    padding :10 
+
   }
 
 

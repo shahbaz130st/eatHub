@@ -60,7 +60,7 @@ const CartScreen = ({ navigation, route }) => {
 
     const makePayment = () => {
 
-        navigation.navigate("PaymentScreen")
+        navigation.navigate("PaymentScreen", { product: cart, total: total, afterDiscountPrice: discountAfterPrice })
     }
     const storeData = async (value) => {
         console.log(value)

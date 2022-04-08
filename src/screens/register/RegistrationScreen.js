@@ -76,6 +76,23 @@ const RegistrationScreen = ({ navigation, route }) => {
       }
     }
   };
+  // const handleSignUp = async () => {
+  //   try {
+  //     const credential = await auth.createUserWithEmailAndPassword(email, password);
+  //     const { uid } = credential;
+  //     // your data here (dont forget to store the uid on the document)
+  //     const user = {
+  //       name: name,
+  //       phone: phone,
+  //       address: address,
+  //       email: email,
+  //       user_id: uid,
+  //     };
+  //     await firebase.firestore().collection('users').doc(uid).set(user);
+  //   } catch {
+  //     //do whatever
+  //   }
+  // };
   const handleSignUp = () => {
     auth.createUserWithEmailAndPassword(email, password)
       // First cREATE AND USER NAME
@@ -85,7 +102,9 @@ const RegistrationScreen = ({ navigation, route }) => {
         firebase.firestore().collection('user').add({
           name: name,
           phone: phone,
-          address: address
+          address: address,
+          email: email,
+          user_id: userCredentials.user.uid
         }).then(() => {
           Alert.alert(
             '',

@@ -7,6 +7,7 @@ import { StackActions } from "@react-navigation/native";
 import { StatusBar } from 'expo-status-bar';
 import { auth } from '../../../firebase'
 import { styles } from "../../themes/commonStyles";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 const mainApp = StackActions.replace("TabNavigatorStack")
@@ -59,7 +60,9 @@ const LoginScreen = ({ navigation, route }) => {
       // sECOND GET CREDIANTOIAL 
       .then(userCredentials => {
         const user = userCredentials.user;
-        console.log('Logged in with:', user.email);
+        console.log('Logged in with:', user.uid);
+        AsyncStorage.setItem("isLogin", "true")
+        AsyncStorage.setItem("uid", user.uid)
         navigation.dispatch(mainApp)
         //  navigation.navigate("HomeScreen", {useremail: email })
         // navigation.replace('HomeScreen')
@@ -67,7 +70,6 @@ const LoginScreen = ({ navigation, route }) => {
       })
       .catch(error => alert(error.message))
   }
-
 
   return (
     <View style={{ flex: 1, backgroundColor: "white", alignItems: "center" }}>
@@ -87,19 +89,19 @@ const LoginScreen = ({ navigation, route }) => {
         />
       </View>
 
-    
 
-    <BTNComponent
-      name="Login"
-      func= { () =>{ loginValidation()}}
+
+      <BTNComponent
+        name="Login"
+        func={() => { loginValidation() }}
       />
-    <BTNoutComponent
-    name="Register"
-    func= { () =>{ navRegister()}}
-    />
+      <BTNoutComponent
+        name="Register"
+        func={() => { navRegister() }}
+      />
 
-   
-  
+
+
     </View>
 
 
