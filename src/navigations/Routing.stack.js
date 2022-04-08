@@ -18,11 +18,16 @@ const RootStack = createNativeStackNavigator();
 const Routing = () => {
     return (
         <NavigationContainer>
-            <RootStack.Navigator screenOptions={{ headerShown: false }}>
+            <RootStack.Navigator screenOptions={{ headerShown: false,
+             headerStyle: {backgroundColor: '#FF4500',  textTransform: 'uppercase'},
+             headerTintColor: '#fff',
+             headerTitleStyle: {fontWeight: 'bold'},
+            
+             }}>
                 <RootStack.Screen name="OnBoardingStck" component={OnBoardingStck} />
                 <RootStack.Screen name="TabNavigatorStack" component={TabNavigatorStack} />
                 <RootStack.Screen name="SignOutScreen" component={SignOutScreen} />
-                <RootStack.Screen name="SettingScreen" component={SettingScreen} />
+                <RootStack.Screen name="SettingScreen" component={SettingScreen} options={{headerTitle: 'Settings', headerShown: true}} />
                 <RootStack.Screen name="UserProfileScreen" component={UserProfileScreen} options={{headerTitle: 'Profile', headerShown: true}} />
                 <RootStack.Screen name="ProductDetailScreen" component={ProductDetailScreen} options={{headerTitle: 'Product Details', headerShown: true}} />
                 <RootStack.Screen name="PaymentScreen" component={PaymentScreen} options={{headerTitle: 'Payment Information', headerShown: true}} />
@@ -30,7 +35,7 @@ const Routing = () => {
                 <RootStack.Screen name="OrderReviewScreen" component={OrderReviewScreen} options={{headerTitle: 'Order Review', headerShown: true}} />
                 {/* <RootStack.Screen name="OrderHistoryScreen" component={OrderHistoryScreen} options={{headerTitle: 'Order History', headerShown: true}} /> */}
                 <RootStack.Screen name="OrderScreen" component={OrderScreen} options={{headerTitle: 'order', headerShown: true}} />
-                <RootStack.Screen name="EditProfileScreen" component={EditProfileScreen} />
+                <RootStack.Screen name="EditProfileScreen" component={EditProfileScreen} options={{headerTitle: 'Edit Profile', headerShown: true}}  />
             </RootStack.Navigator>
         </NavigationContainer>
     )

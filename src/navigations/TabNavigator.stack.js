@@ -36,7 +36,7 @@ const TabNavigator = () => {
           headerTitle:"Cart",
           tabBarLabel: 'Cart',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={26} />
+            <MaterialCommunityIcons name="cart" color={color} size={26} />
           ),
         }}
       />

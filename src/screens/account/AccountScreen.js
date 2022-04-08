@@ -1,45 +1,40 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
+import BTNComponent from "../../component/BTNComponent";
+import BTNoutComponent from "../../component/BTNoutComponent";
 import React from "react";
 import TabHeaderComponenet from "../../component/TabHeaderComponenet";
+import { auth } from '../../../firebase'
 import { styles } from "../../themes/commonStyles";
+
 const AccountScreen = ({ navigation, route }) => {
     return (
         <View style={styles.mainViewStyle}>
             <TabHeaderComponenet name="User Name"/>
-            <Text style={{ marginBottom: 20 }}>{"You are at Account Page"}</Text>
-            <TouchableOpacity style={styles.buttonStyle} onPress={() => {
-                navigation.navigate("UserProfileScreen")
-            }}>
-                <Text>{"Profile"}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonStyle} onPress={() => {
-                navigation.navigate("SettingScreen")
-            }}>
-                <Text>{"Setting"}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonStyle} onPress={() => {
-                navigation.navigate("SignOutScreen")
-            }}>
-                <Text>{"Logout"}</Text>
-            </TouchableOpacity>
+
+            <BTNoutComponent
+            
+             name="Profile"
+             func= { () =>{ navigation.navigate("UserProfileScreen")}}
+        
+            />
+
+<BTNoutComponent
+            
+            name="Settings"
+            func= { () =>{ navigation.navigate("SettingScreen")}}
+       
+           />
+
+<BTNoutComponent
+            
+            name="Signout"
+            func= { () =>{ navigation.navigate("SignOutScreen")}}
+       
+           />
+       
         </View>
     )
 }
 export default AccountScreen;
 
-// const styles = StyleSheet.create({
-//     mainViewStyle: {
-//         flex: 1,
-//         alignItems: "center",
-//         justifyContent: "center",
-//         backgroundColor: "white"
-//     },
-//     buttonStyle: {
-//         borderColor: "#FF4500",
-//         borderWidth: 1,
-//         padding: 15,
-//         borderRadius: 5,
-//         marginBottom: 20
-//     }
-// })

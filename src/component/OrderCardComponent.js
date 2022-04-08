@@ -7,43 +7,41 @@ const OrderCardComponent = (props) => {
 
     const [items, getitems] = useState(props.items)
 
-  
-    return(
-        <View style= {styles.orderCard}>
-        <Text> User Name :  {props.cName}</Text>
-        <Text> User Email {props.cEmail}</Text>
-        <Text> Delivery Address {props.deliveryAddress}</Text>
-        <Text> Order No. {props.orderNo}</Text>
-        <Text> Total Price : {props.toalPrice}</Text>
-        {
-            props.items.map((item) => {
 
+    return (
+        <View style={styles.orderCard}>
+            <Text> User Name :  {props?.cName}</Text>
+            <Text> User Email {props?.cEmail}</Text>
+            <Text> Delivery Address {props?.deliveryAddress}</Text>
+            <Text> Order No. {props?.orderNo}</Text>
+            <Text> Total Price : {props?.toalPrice}</Text>
+            {props?.items&&props.items.map((item) => {
                 return (
 
                     <View style={{ flexDirection: "row", justifyContent: "space-between", width: "100%", padding: 10, borderBottomWidth: 0.2, }}>
-                    <View style={{ width: "25%", alignItems: "center", justifyContent: "center" }}>
-                        
+                        <View style={{ width: "25%", alignItems: "center", justifyContent: "center" }}>
+
+                        </View>
+                        <View style={{ width: "25%", alignItems: "center", justifyContent: "center" }}>
+                            <Text>{item.Title}</Text>
+                        </View>
+                        <View style={{ width: "25%", alignItems: "center", justifyContent: "center" }}>
+                            <Text>{item.quantity}</Text>
+                        </View>
+                        <View style={{ width: "25%", alignItems: "center", justifyContent: "center" }}>
+                            <Text>{`$`}{item.quantity * item.Price}</Text>
+                        </View>
                     </View>
-                    <View style={{ width: "25%", alignItems: "center", justifyContent: "center" }}>
-                        <Text>{item.Title}</Text>
-                    </View>
-                    <View style={{ width: "25%", alignItems: "center", justifyContent: "center" }}>
-                        <Text>{item.quantity}</Text>
-                    </View>
-                    <View style={{ width: "25%", alignItems: "center", justifyContent: "center" }}>
-                        <Text>{`$`}{item.quantity * item.Price}</Text>
-                    </View>
-                </View>
 
 
                 )
             })
 
-        }
+            }
 
-        
 
-    </View>
+
+        </View>
     );
 }
 

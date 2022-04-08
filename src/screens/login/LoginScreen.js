@@ -1,4 +1,4 @@
-import { Button, KeyboardAvoidingView, Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Button, KeyboardAvoidingView, Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import { useEffect, useState } from 'react';
 
 import BTNComponent from "../../component/BTNComponent";
@@ -73,6 +73,8 @@ const LoginScreen = ({ navigation, route }) => {
 
   return (
     <View style={{ flex: 1, backgroundColor: "white", alignItems: "center" }}>
+      <Image source={require("../../../assets/eatHub.jpg")} style={{ width: 100, height: 100, resizeMode: "contain", marginTop: 20 }} />
+      <Text>{"EatHub"}</Text>
       <View style={styles.inputContainer}>
         <TextInput
           placeholder="Email"

@@ -1,38 +1,33 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { auth, fireDB } from '../../../firebase'
+import { useEffect, useState } from 'react';
 
+import BTNComponent from "../../component/BTNComponent";
+import BTNoutComponent from "../../component/BTNoutComponent";
 import React from "react";
+import { styles } from "../../themes/commonStyles";
 
 const UserProfileScreen = ({ navigation, route }) => {
     return (
         <View style={styles.mainViewStyle}>
-            <Text style={{ marginBottom: 20 }}>{"You are at UserProfile Page"}</Text>
-            <TouchableOpacity style={styles.buttonStyle} onPress={() => {
-                navigation.navigate("EditProfileScreen")
-            }}>
-                <Text>{"Edit Profile Screen"}</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonStyle} onPress={() => {
-                navigation.goBack()
-            }}>
-                <Text>{"Go Back"}</Text>
-            </TouchableOpacity>
+        
+            <View style= {styles.orderCard}>
+        <Text> User Name : </Text>
+        <Text> User Email : </Text>
+        <Text> Address : </Text>
+        <Text> Phone No. </Text>
+        <Text> Items : </Text>
+
+            </View>
+
+
+            <BTNComponent
+      name="Edit"
+      func= { () =>{  navigation.navigate("EditProfileScreen")}}
+      />
+
         </View>
     )
 }
 export default UserProfileScreen;
 
-const styles = StyleSheet.create({
-    mainViewStyle: {
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "white"
-    },
-    buttonStyle: {
-        borderColor: "#FF4500",
-        borderWidth: 1,
-        padding: 15,
-        borderRadius: 5,
-        marginBottom:20
-    }
-})
