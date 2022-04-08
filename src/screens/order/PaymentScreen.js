@@ -92,7 +92,7 @@ const PaymentScreen = ({ navigation, route }) => {
             onPress: () => console.log('Cancel Pressed'),
             style: 'cancel',
           },
-          { text: 'OK', onPress: () => navigation.navigate("OrderHistoryScreen") },
+          { text: 'OK', onPress: () => {navigation.navigate("OrderHistoryScreen")} },
         ]
       );
     });

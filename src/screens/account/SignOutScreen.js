@@ -1,10 +1,20 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { StackActions } from "@react-navigation/native";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { auth, fireDB } from '../../../firebase'
+const login = StackActions.replace("OnBoardingStck")
 const SignOutScreen = (props) => {
+    const onSignoutPress = () => {
+        auth.signOut()
+            .then(console.log('signed out'))
+        AsyncStorage.clear()
+        props.navigation.dispatch(login)
+    }
     return (
         <View style={styles.mainViewStyle}>
             <TouchableOpacity style={styles.buttonStyle} onPress={() => {
-                props.navigation.navigate("OnBoardingStck")
+                onSignoutPress()
             }}>
                 <Text>{"Sign Out"}</Text>
             </TouchableOpacity>
