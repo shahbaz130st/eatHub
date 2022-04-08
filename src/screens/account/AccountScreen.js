@@ -8,6 +8,7 @@ import { auth } from '../../../firebase'
 import { styles } from "../../themes/commonStyles";
 
 const AccountScreen = ({ navigation, route }) => {
+    
     return (
         <View style={styles.mainViewStyle}>
             <TabHeaderComponenet name="User Name"/>
