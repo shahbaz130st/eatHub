@@ -25,7 +25,6 @@ const OrderHistoryScreen = ({ navigation, route }) => {
         <View style={styles.mainViewStyle}>
 
             <TabHeaderComponenet name="Order History" />
-            <Text style={{ marginBottom: 20 }}>{"You are at OrderHistoryScreen Page1"}</Text>
             <OrderCardComponent
                 cName={order?.userName}
                 cEmail={auth.currentUser.email}

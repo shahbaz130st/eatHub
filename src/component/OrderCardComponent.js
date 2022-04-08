@@ -14,7 +14,7 @@ const OrderCardComponent = (props) => {
         <Text> User Email {props.cEmail}</Text>
         <Text> Delivery Address {props.deliveryAddress}</Text>
         <Text> Order No. {props.orderNo}</Text>
-        <Text> Items : {props.cName}</Text>
+        <Text> Total Price : {props.toalPrice}</Text>
         {
             props.items.map((item) => {
 
