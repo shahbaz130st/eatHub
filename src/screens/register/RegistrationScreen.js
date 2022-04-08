@@ -1,10 +1,11 @@
 import * as firebase from "firebase";
 
-import { Alert,KeyboardAvoidingView, Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import {  useState } from 'react';
+import { Alert, KeyboardAvoidingView, Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
+import BTNComponent from "../../component/BTNComponent";
 import { auth } from '../../../firebase'
 import { styles } from "../../themes/commonStyles";
+import { useState } from 'react';
 
 //import { useNavigation } from '@react-navigation/core';
 
@@ -80,8 +81,8 @@ const RegistrationScreen = ({navigation, route}) => {
 
   return (
 
-    <KeyboardAvoidingView
-      style={styles.container}
+    <View
+      style={styles.mainViewStyle}
       behavior="padding"
     >
       <View style={styles.inputContainer}>
@@ -119,16 +120,12 @@ const RegistrationScreen = ({navigation, route}) => {
 
       </View>
 
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          onPress={() => { registerValidation() }}
-          style={styles.button}
-        >
-          <Text style={styles.buttonText}>Register</Text>
-        </TouchableOpacity>
-
-      </View>
-    </KeyboardAvoidingView>
+      
+    <BTNComponent
+      name="Register"
+      func= { () =>{ registerValidation()}}
+      />
+    </View>
   );
 
 }

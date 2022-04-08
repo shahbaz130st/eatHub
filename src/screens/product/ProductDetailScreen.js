@@ -17,6 +17,7 @@ const ProductDetailScreen = ({ navigation, route }) => {
           return item.Id == product.Id;
         }
         if (value == -1) {
+          product.quantity = quatity
           tempArray.push(product)
           await storeData(tempArray);
           navigation.navigate("CartScreen")
@@ -25,34 +26,6 @@ const ProductDetailScreen = ({ navigation, route }) => {
           await storeData(updatedData);
           navigation.navigate("CartScreen")
         }
-
-        // const updatedData = tempArray.map(x => (x.Id == product.Id ? { ...x, quantity: quatity } : x));
-        // console.log(updatedData)
-        // product.quantity = quatity
-        // tempArray.push(product)
-        // await storeData(tempArray);
-        // navigation.navigate("CartScreen")
-        // let modifyArray = []
-        // // for (let i = 0; i < tempArray.length; i++) {
-        // //   if (tempArray[i].Id == product.Id) {
-        // //     modifyArray.push({ ...product, quantity: quatity })
-        // //   }
-        // //   else {
-        // //     modifyArray.push(product)
-        // //   }
-        // // }
-        // console.log("call", modifyArray.length, modifyArray)
-        // await storeData(modifyArray);
-
-        // let newArr = tempArray.map(obj => {
-        //   if (obj.Id == product.Id) {
-        //     return { ...obj, quantity: quatity };
-        //   } else {
-        //     tempArray.push(product)
-        //   }
-        // });
-
-        // navigation.navigate("CartScreen")
       }
       else if (myArray == null) {
         product.quantity = quatity

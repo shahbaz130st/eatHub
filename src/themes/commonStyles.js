@@ -20,82 +20,6 @@ export const styles = StyleSheet.create({
         height:50
         
       },
-
-      buttonTop: {
-        backgroundColor: '#0782F9',
-        width: '100%',
-        padding: 15,
-        borderRadius: 10,
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign:'center',
-        width: 150,
-        height:50
-      },
-
-      entryContainer: {
-        flex: 8,
-        
-        backgroundColor: '#fff',
-        width: `100%`, 
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign:'center',
-        padding : 10
-      },
-
-      mapContainer: {
-        backgroundColor: '#fff',
-        width: `100%`, 
-        height: `100%`, 
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign:'center',
-        marginTop: 10
-      },
-
-      mapView: {
-        position: "absolute",
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        width: `100%`, 
-        height: `100%`,
-      
-      },
-
-
-      entry: {
-        borderWidth: 1,
-        backgroundColor: '#fff',
-        width: `90%`, 
-        justifyContent: 'flex-start',
-        alignItems: 'center',
-        textAlign:'center',
-      },
-
-      entryTop: {
-        borderWidth: 1,
-        backgroundColor: '#BFCAD0', 
-        width: `100%`, 
-        textAlign:'center',
-        alignItems: 'center',
-        height: 30,
-        padding : 0  
-      },
-    
-      topTitle:{
-        backgroundColor: `#FF0000`,
-        color: '#fff',
-        width: `100%` ,
-        margin: 10,
-        padding: 10,
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
-        textAlign: 'left',
-        fontWeight: "bold"
-    },
     textFont: {
       fontSize:  25
     },
@@ -104,7 +28,7 @@ export const styles = StyleSheet.create({
       width: '80%'
     },
     input: {
-      backgroundColor: 'white',
+      backgroundColor: '#fcf1f0',
       paddingHorizontal: 15,
       paddingVertical: 10,
       borderRadius: 10,
@@ -112,16 +36,16 @@ export const styles = StyleSheet.create({
     },
 
     buttonContainer: {
-      width: '60%',
+      width: '70%',
       justifyContent: 'center',
       alignItems: 'center',
       marginTop: 20,
     },
 
     button: {
-      backgroundColor: '#0782F9',
+      backgroundColor: '#FF4500',
       width: '100%',
-      padding: 15,
+      padding: 10,
       borderRadius: 10,
       alignItems: 'center',
     },
@@ -129,20 +53,22 @@ export const styles = StyleSheet.create({
     buttonOutline: {
       backgroundColor: 'white',
       marginTop: 5,
-      borderColor: '#0782F9',
+      borderColor: '#FF4500',
       borderWidth: 2,
     },
 
     buttonText: {
       color: 'white',
-      fontWeight: '700',
-      fontSize: 16,
-    },
+      fontWeight: '600',
+      fontSize: 14,
+      textTransform: 'uppercase',
+        },
 
     buttonOutlineText: {
-      color: '#0782F9',
-      fontWeight: '700',
-      fontSize: 16,
+      color: '#FF4500',
+      fontWeight: '600',
+      fontSize: 14,
+      textTransform: 'uppercase',
     },
 
     Title:{
@@ -156,6 +82,63 @@ export const styles = StyleSheet.create({
       textAlign: 'center',
       fontWeight: "bold",
       fontSize:  20
+  },
+  mainViewStyle: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "flex-start",
+    backgroundColor: "white"
+  },
+  buttonStyle: {
+    borderColor: "#FF4500",
+    borderWidth: 1,
+    padding: 15,
+    borderRadius: 5
+  },
+  card: {
+    backgroundColor: 'white',
+    borderRadius: 16,
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    shadowColor: 'black',
+    shadowOffset: {
+      height: 0,
+      width: 0,
+    },
+    elevation: 1,
+    marginVertical: 20,
+  },
+  image: {
+    height: 300,
+    width: '100%'
+  },
+  infoContainer: {
+    padding: 16,
+  },
+  name: {
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+  price: {
+    fontSize: 16,
+    fontWeight: '600',
+    marginBottom: 8,
+  },
+  description: {
+    fontSize: 16,
+    fontWeight: '400',
+    color: '#787878',
+    marginBottom: 16,
+  },
+  quantityButton: {
+    height: 30,
+    width: 30,
+    borderWidth: 1,
+    borderColor: "black",
+    borderRadius: 15,
+    alignItems: "center",
+    justifyContent: "center"
   }
+
 
   });

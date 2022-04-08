@@ -1,10 +1,12 @@
 import { Button, KeyboardAvoidingView, Pressable, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useEffect, useState } from 'react';
 
+import BTNComponent from "../../component/BTNComponent";
+import BTNoutComponent from "../../component/BTNoutComponent";
+import { StackActions } from "@react-navigation/native";
 import { StatusBar } from 'expo-status-bar';
 import { auth } from '../../../firebase'
 import { styles } from "../../themes/commonStyles";
-import { StackActions } from "@react-navigation/native";
 
 const reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 const mainApp = StackActions.replace("TabNavigatorStack")
@@ -85,23 +87,22 @@ const LoginScreen = ({ navigation, route }) => {
         />
       </View>
 
-      <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          onPress={() => { loginValidation() }}
-          style={styles.button}
-        >
-          <Text style={styles.buttonText}>Login</Text>
-        </TouchableOpacity>
+    
 
-        <Text>OR</Text>
-        <TouchableOpacity
-          onPress={navRegister}
-          style={[styles.button, styles.buttonOutline]}
-        >
-          <Text style={styles.buttonOutlineText}>Register</Text>
-        </TouchableOpacity>
-      </View>
+    <BTNComponent
+      name="Login"
+      func= { () =>{ loginValidation()}}
+      />
+    <BTNoutComponent
+    name="Register"
+    func= { () =>{ navRegister()}}
+    />
+
+   
+  
     </View>
+
+
   );
 
 }

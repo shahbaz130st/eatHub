@@ -21,6 +21,8 @@ const TabNavigator = () => {
         name="MenueScreen"
         component={MenueScreen}
         options={{
+         title: 'Product Details', 
+          header: true,
           tabBarLabel: 'Menu',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={26} />
@@ -38,18 +40,7 @@ const TabNavigator = () => {
           ),
         }}
       />
-      {/* <Tab.Screen
-        name="OrderScreen"
-        component={OrderScreen}
-        options={{
-          tabBarLabel: 'Order',
-          headerTitle: 'Product Details', 
-          headerShown: true,
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="order-bool-ascending-variant" size={26} color={color} />
-          ),
-        }}
-      /> */}
+
 
       <Tab.Screen
         name="OrderHistoryScreen"
