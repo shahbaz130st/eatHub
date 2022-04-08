@@ -16,7 +16,7 @@ const OrderCardComponent = (props) => {
         <Text> Order No. {props.orderNo}</Text>
         <Text> Items : {props.cName}</Text>
         {
-            items.map((item) => {
+            props.items.map((item) => {
 
                 return (
 
