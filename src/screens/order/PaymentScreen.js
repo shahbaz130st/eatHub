@@ -64,7 +64,10 @@ const PaymentScreen = ({ navigation, route }) => {
       placeOrder();
     }
   }
-
+  const removeData = async () => {
+    AsyncStorage.clear()
+    navigation.navigate("OrderHistoryScreen")
+  }
 
   const placeOrder = () => {
 
@@ -92,7 +95,11 @@ const PaymentScreen = ({ navigation, route }) => {
             onPress: () => console.log('Cancel Pressed'),
             style: 'cancel',
           },
-          { text: 'OK', onPress: () => {navigation.navigate("OrderHistoryScreen")} },
+          {
+            text: 'OK', onPress: () => {
+              removeData()
+            }
+          },
         ]
       );
     });
